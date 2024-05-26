@@ -1,0 +1,60 @@
+Exam: 
+
+
+Check if all elements have Correct Naming:
+
+Button - btn
+Label - lbl
+TextBox - txtb
+checkBox - chb
+ComboBox - cbo
+
+Remove borders maybe everywhere
+!!!Add password chars to passwrods elements
+
+Utils/Helpers:
+CheckMatchingPasswords,
+CheckALlFieldsRegister
+CheckAllFieldsLogin
+CloseApplication
+HashPasswords
+
+Forms must include the Follwoing Functions/Methods:
+
+-Register
+goToLoginButton onClick
+btnClose onClick
+btnResgister onClick - messagebox for passwords, label for not filling all fields, messagebox for success, redirect to login, in try-catch creaty new context, create new user,check if existing email if true messagebox email is already used if not save user, in catch messagebox the exception
+showpassword checkbox
+
+-Login
+btn close onCLick close app
+btnLogin onClick - label for not filling all fields, look in context for present user with this password and email, check his info if not throw error with messagebox if he valid throw messagebox wellcome and succesful login, and then display the query form
+nearly the same show password checkbox
+
+-QueryForm
+List from tpye Product to store products
+btnClose onClick
+btnAdd - split product name and price and remove whitespalce, Check if everything is filled, else messagebox, check price if greeater than zero, else messagebox, add the product ot list and display messagebox
+btnGenerate - iterate through list and find final sum and display via messagebox
+
+
+
+Install via nuget entity design,core,sqlServer
+Models:
+user model - email{key}, password, username. Create Table and use Column (TypeName), emphty constructor
+product Product - Name,Price<NumberOfProduct, emphty constructor
+
+UserContext:
+inherits bdCOntext, needs to import Models from namespace using also do this in QueryForm, virtual Method DbSet<User> Users {get; set;}
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+    optionsBuilder.UseSqlServer("connection string");
+}
+
+conn string get through created database from data. RashiCode
+
+Need to create db and named it Users
+
+
+
